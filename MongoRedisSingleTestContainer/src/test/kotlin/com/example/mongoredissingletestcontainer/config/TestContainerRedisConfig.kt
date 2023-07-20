@@ -13,7 +13,6 @@ class TestContainerRedisConfig : CommonDependencyConfig() {
     companion object {
         private const val REDIS_DOCKER_IMAGE = "redis:latest"
 
-        @JvmStatic
         @Container
         val REDIS_CONTAINER = GenericContainer(
             DockerImageName.parse(REDIS_DOCKER_IMAGE)

@@ -13,7 +13,6 @@ class TestContainerMongoConfig : CommonDependencyConfig() {
     companion object {
         private const val MONGO_DOCKER_IMAGE = "mongo:latest"
 
-        @JvmStatic
         @Container
         val MONGO_CONTAINER = GenericContainer(
             DockerImageName.parse(MONGO_DOCKER_IMAGE)
