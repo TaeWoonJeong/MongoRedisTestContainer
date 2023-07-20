@@ -13,6 +13,7 @@ class AddMongoTest : TestContainerMongoConfig() {
         @DynamicPropertySource
         fun overrideProps(registry: DynamicPropertyRegistry) {
             registry.add("spring.data.mongodb.host") { MONGO_CONTAINER.host }
+//            registry.add("spring.data.mongodb.port") { MONGO_CONTAINER.getMappedPort(27017).toString() }
             registry.add("spring.data.mongodb.port") { MONGO_CONTAINER.firstMappedPort.toString() }
         }
     }

@@ -15,7 +15,8 @@ class GetRedisTest() : TestContainerRedisConfig() {
         @DynamicPropertySource
         fun overrideProps(registry: DynamicPropertyRegistry) {
             registry.add("spring.data.redis.host") { REDIS_CONTAINER.host }
-            registry.add("spring.data.redis.port") { REDIS_CONTAINER.firstMappedPort }
+//            registry.add("spring.data.redis.port") { REDIS_CONTAINER.firstMappedPort }
+            registry.add("spring.data.redis.port") { REDIS_CONTAINER.getMappedPort(6379) }
         }
     }
 
